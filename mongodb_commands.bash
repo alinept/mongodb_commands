@@ -33,3 +33,11 @@ db.collection_name.find(
 { age: { $gt: 18  } },    #query criteria
 { name: 1, address: 1 }   #projection
 ).limit(5)				  #cursor modifier
+
+#Examples
+db.series.find({},{"Série":1, "Ano de lançamento": 1, "_id":0})
+db.series.find({"Ano de lançamento": {$in: [2019,2020]}})
+db.series.find({}, {Série: 1, Classificação: 1, _id: 0}).sort({"Série":1})
+db.series.find({"Temporadas disponíveis": {$gte: 4}})
+db.series.find({"Ano de lançamento": {$ne: 2020}}) #value different of
+
