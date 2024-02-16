@@ -27,4 +27,9 @@ db.collection_name.insertMany([
         "Genero": ["Drama"],
         "IMDb Avaliação": 7.5,
         "Classificação": "16+"
-    }])
+    }]) #insert many documents in a collection
+
+db.collection_name.find(                          
+{ age: { $gt: 18  } },    #query criteria
+{ name: 1, address: 1 }   #projection
+).limit(5)				  #cursor modifier
